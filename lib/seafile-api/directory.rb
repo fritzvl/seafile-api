@@ -25,6 +25,7 @@ module SeafileApi
     def get_list_dir_entry(repo,path)
       http = curl_get("repos/#{repo}/dir/?p=#{path}")
       puts "!!@@#{http.body_str}@@!!"
+      puts "!!@@#{http.inspect}@@!!"
       JSON.parse(http.body_str)
     end
 
